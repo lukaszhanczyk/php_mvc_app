@@ -1,0 +1,10 @@
+{
+    "name": "lukas/php_mvc_app",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/",
+            "src\\Controller\\": "src/Controller/"
+        }
+    },
+    "require": {}
+}
