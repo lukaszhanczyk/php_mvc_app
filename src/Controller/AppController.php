@@ -2,10 +2,13 @@
 
 namespace src\Controller;
 
-class AppController
+class AppController extends Controller
 {
-    public function index(){
-        echo "asdasd";
-        return "qweqwe";
+
+    public function index()
+    {
+        $this->render('index.html', [
+            'name' => 'nameqweqwe'
+        ]);
     }
 }
