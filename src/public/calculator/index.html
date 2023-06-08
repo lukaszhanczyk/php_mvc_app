@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency</title>
+</head>
+<body>
+
+<h1>Calculations List</h1>
+
+<a href="/calculator/store">Calculate new</a>
+
+<table border='1' style='border-collapse:collapse'>
+    <tr>
+        <th> Id </th>
+        <th> Currency Code From </th>
+        <th> Currency Code To </th>
+        <th> Value From </th>
+        <th> Value To </th>
+    </tr>
+    <?php foreach ($arg['calculations'] as $calculation){ ?>
+    <tr>
+        <td><?php echo $calculation->getId(); ?></td>
+        <td><?php echo $calculation->getCurrencyCodeFrom(); ?></td>
+        <td><?php echo $calculation->getCurrencyCodeTo(); ?></td>
+        <td><?php echo $calculation->getValueFrom(); ?></td>
+        <td><?php echo $calculation->getValueTo(); ?></td>
+    </tr>
+    <?php } ?>
+</table>
+</body>
+</html>

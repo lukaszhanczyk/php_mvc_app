@@ -11,14 +11,19 @@ class CurrencyAdapter
         $currencies = [];
 
         foreach ($currenciesRaw as $currency){
-            $currencies[] = new Currency(
-                $currency['id'] ?? null,
-                $currency['currency'],
-                $currency['code'],
-                $currency['mid'],
-            );
+            $currencies[] = $this->adaptOne($currency);
         }
 
         return $currencies;
+    }
+
+    public function adaptOne($currencyRaw): Currency
+    {
+        return new Currency(
+            $currencyRaw['id'] ?? null,
+            $currencyRaw['currency'],
+            $currencyRaw['code'],
+            $currencyRaw['mid'],
+        );
     }
 }

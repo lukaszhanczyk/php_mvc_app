@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency</title>
+</head>
+<body>
+
+<h1>Calculate New</h1>
+
+<a href="/calculator">Calculation List</a>
+
+<?php if ($arg['error']){ ?>
+<h4 style="color:red;"><?php echo $arg['error']; ?></h4>
+<?php } ?>
+<form action="/calculator/store" method="post">
+    <input type="number" name="value"><br>
+    <select name="currency_from">
+        <option value="">--Please choose an option--</option>
+        <?php foreach ($arg['currencies'] as $currency){ ?>
+            <option value="<?php echo $currency->getCode(); ?>"><?php echo $currency->getCode() . " " . $currency->getName(); ?></option>
+        <?php } ?>
+    </select>
+    <select name="currency_to">
+        <option value="">--Please choose an option--</option>
+        <?php foreach ($arg['currencies'] as $currency){ ?>
+        <option value="<?php echo $currency->getCode(); ?>"><?php echo $currency->getCode() . " " . $currency->getName(); ?></option>
+        <?php } ?>
+    </select>
+    <input type="submit">
+</form>
+
+</body>
+</html>

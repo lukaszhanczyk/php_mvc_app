@@ -2,6 +2,7 @@
 
 namespace src\Service;
 
+use src\Entity\Currency;
 use src\Service\Adapter\CurrencyAdapter;
 
 class CurrencyService
@@ -20,5 +21,11 @@ class CurrencyService
     {
         $rows = $this->dbService->getData("SELECT * FROM " . $this->tableName);
         return $this->currencyAdapter->adapt($rows);
+    }
+
+    public function getOneByCode(string $code): Currency
+    {
+        $rows = $this->dbService->getData("SELECT * FROM `" . $this->tableName . "` WHERE `code` = '" . $code . "'");
+        return $this->currencyAdapter->adaptOne($rows[0]);
     }
 }

@@ -8,7 +8,9 @@ class Router
 {
     public array $routes = [
         '/' => 'src\Controller\AppController@index',
-        '/currency/' => 'src\Controller\CurrencyController@index',
+        '/currency' => 'src\Controller\CurrencyController@index',
+        '/calculator' => 'src\Controller\CalculatorController@index',
+        '/calculator/store' => 'src\Controller\CalculatorController@store',
     ];
     private NbpCurrencyService $nbpCurrencyService;
 
