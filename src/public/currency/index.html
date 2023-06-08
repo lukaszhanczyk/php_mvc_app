@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency</title>
+</head>
+<body>
+<table border='1' style='border-collapse:collapse'>
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Code </th>
+        <th> Mid </th>
+    </tr>
+<?php foreach ($arg['currencies'] as $currency){ ?>
+    <tr>
+        <td><?php echo $currency->getId(); ?></td>
+        <td><?php echo $currency->getName(); ?></td>
+        <td><?php echo $currency->getCode(); ?></td>
+        <td><?php echo $currency->getMid(); ?></td>
+    </tr>
+<?php } ?>
+</table>
+</body>
+</html>

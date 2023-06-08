@@ -4,7 +4,7 @@ namespace src\Controller;
 
 class Controller
 {
-    public function render(string $path, array $arguments): void
+    public function render(string $path, array $arguments = []): void
     {
         $currentIncludePath = get_include_path();
         $newIncludePath = '/var/www/html/src/public';

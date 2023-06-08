@@ -3,8 +3,16 @@
     "autoload": {
         "psr-4": {
             "src\\": "src/",
-            "src\\Controller\\": "src/Controller/"
+            "src\\Controller\\": "src/Controller/",
+            "src\\Entity\\": "src/Entity/",
+            "src\\Service\\": "src/Service/"
         }
     },
-    "require": {}
+    "require": {
+        "ext-simplexml": "*",
+        "ext-libxml": "*",
+        "ext-mysqli": "*",
+        "ext-curl": "*",
+        "ext-pdo": "*"
+    }
 }

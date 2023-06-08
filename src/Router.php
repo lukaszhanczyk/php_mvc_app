@@ -2,18 +2,27 @@
 
 namespace src;
 
+use src\Service\NbpCurrencyService;
+
 class Router
 {
     public array $routes = [
         '/' => 'src\Controller\AppController@index',
+        '/currency/' => 'src\Controller\CurrencyController@index',
     ];
+    private NbpCurrencyService $nbpCurrencyService;
+
+    public function __construct()
+    {
+        $this->nbpCurrencyService = new NbpCurrencyService();
+    }
 
     private function getUri(): string
     {
         return $_SERVER['REQUEST_URI'];
     }
 
-    public function uri(): void
+    public function handleUri(): void
     {
         $request = $this->getUri();
 
@@ -26,5 +35,10 @@ class Router
         } else {
             echo '404 - Not Found';
         }
+    }
+
+    public function updateDatabase(): void
+    {
+        $this->nbpCurrencyService->updateRows();
     }
 }
