@@ -6,8 +6,6 @@ class AppController extends Controller
 {
     public function index()
     {
-        $this->render('index.html', [
-            'name' => 'nameqweqwe'
-        ]);
+        $this->render('index.html');
     }
 }
